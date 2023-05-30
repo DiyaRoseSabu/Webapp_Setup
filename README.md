@@ -21,4 +21,4 @@ Insall Flask
 `pip install flask
 `
 
-
+The app.py file contains the flask code, while the templates file is made up of html files. 
