@@ -28,5 +28,7 @@ jobs:
           push: true
           image: 49251/web_app1.0
           tags: latest
+          registry: registry-url.io
+          dockerfile: Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
