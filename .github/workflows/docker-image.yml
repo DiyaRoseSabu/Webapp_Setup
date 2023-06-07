@@ -20,6 +20,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build and Push Docker Image
-        run: |
-          docker build -t your-dockerhub-account/your-image-name:latest .
-          docker push your-dockerhub-account/your-image-name:latest
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+          context: .
+          push: true
+          tags: 49251/web_app1.0:latest
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
