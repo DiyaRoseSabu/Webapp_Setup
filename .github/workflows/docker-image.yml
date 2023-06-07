@@ -1,4 +1,4 @@
-name: HTML Build and Deploy
+name: Docker Build and Push
 
 on:
   push:
@@ -6,31 +6,20 @@ on:
       - main
 
 jobs:
-  build:
+  build_and_push:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
         with:
-          node-version: '16.x'
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Build HTML
+      - name: Build and Push Docker Image
         run: |
-          # Add commands to build your HTML project
-          # For example, if you're using a static site generator like Jekyll or Hugo:
-          # gem install bundler
-          # bundle install
-          # bundle exec jekyll build
-          # Or if you're manually building your HTML project:
-          # npm install
-          # npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site  # Change this to the output directory of your build step
+          docker build -t your-dockerhub-account/your-image-name:latest .
+          docker push your-dockerhub-account/your-image-name:latest
