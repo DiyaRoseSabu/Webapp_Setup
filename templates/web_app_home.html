@@ -3,83 +3,9 @@
 <head>
     <title>BlogIT</title>
     <style>
-    
         /* CSS styles */
-        body {
-            font-family: Georgia (serif);
-            background-color: #f7f8fa;
-            text-align: center;
-            width: 1700px;
-            height: 2050px;
-            size: 1650px ;
-            margin-top: 150px;
-            align-content: center;   
-            background-image: url("wappimg - Copy.jpg");
-            background-size:contain;
-            background-repeat:no-repeat;
-            background-position: right;
-            width: 650px;
-            height: 1250px;
-        }
-        .container {
-            display:contents;
-            align-items:right;
-            width: 1250pts;
-            margin-top:1000px ;
-            padding: 20px;
-            background-color:#A7C7E7;
-            align-content: center;
-        
-        }
-        
-        
-           
-           input[type="text"],
-           input[type="email"],
-           input[type="password"] {
-           border: 10px;
-           border-radius: 20px;
-           padding: 10px;
-           width: 200px;
-           margin: 10px;
-           background-color: #edeff3;
-    }
-    
-            
-        
-        .input-group.input {
-             border-radius: 20px;
-             padding: 8px;
-             border: none;
-             font-size: larger;
-        }
-
-        .btn {
-            background-color: #3f546d;
-            color: #fff;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size:medium;
-        }
-        .btn1 {
-           
-            background-color: #476386;
-            color: #fff;
-            border:250px;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size:medium;
-            
-
-        }
-        .larger-text {
-         font-size: 1px;
-}
-
-  
-    
-</style>
+        /* ... CSS styles code here ... */
+    </style>
 </head>
 <body>
     <div class="container">
@@ -92,7 +18,7 @@
         <div class="input-group">
             <label for="password">Password:</label>
             <input type="password" id="password" placeholder="Enter your password" required>
-            <p><label class="right-aligned"><font size="2.5">Not a member? <a href="{{ url_for('reg') }}">Sign In!</a></font></label></p>
+            <p><label class="right-aligned"><font size="2.5">Not a member? <a href="http://internship.tebbythomas.com:8080/webapp/register">Sign In!</a></font></label></p>
         </div>
 
         <button class="btn" onclick="submitForm()">Submit</button>
@@ -102,11 +28,11 @@
 
     <script>
         function signIn() {
-            window.location.href = "{{ url_for('reg') }}"; // Redirect to the Sign In page
+            window.location.href = "http://internship.tebbythomas.com:8080/webapp/register"; // Redirect to the Sign In page
         }
 
         function submitForm() {
-            window.location.href = "{{ url_for('create') }}"; // Redirect to the Form Submitted page
+            window.location.href = "http://internship.tebbythomas.com:8080/webapp/create"; // Redirect to the Form Submitted page
         }
     </script>
 </body>
